@@ -5,13 +5,16 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-
-
-        double normalTutar, yasİndirimi, indirimliTutar, gidisDonüsİndirimi, sonİndirimliTutar;
-        int    yolculukTipi, mesafe, yas;
-        double yasIndirimOrani;
         double gidisDonüsYasİndirimi;
-
+        double gidisDonüsİndirimi;
+        double indirimliTutar;
+        double normalTutar;
+        double sonİndirimliTutar;
+        double yasIndirimOrani;
+        double yasİndirimi;
+        int    mesafe;
+        int    yas;
+        int    yolculukTipi;
 
         Scanner scanner = new Scanner(System.in);
 
@@ -39,43 +42,8 @@ public class Main {
             return;
         }
 
-        // Yaş indirimine karar ver
-        if (yolculukTipi == 2) {
-            if (yas <= 12) {
-                yasIndirimOrani = 0.50;
-            } else if (yas <= 24) {
-                yasIndirimOrani = 0.10;
-            } else if (yas <= 64) {
-                yasIndirimOrani = 0.20;
-            } else { // > 65
-                yasIndirimOrani = 0.50;
-            }
-        } else {
-            if (yas <= 12) {
-                yasIndirimOrani = 0.50;
-            } else if (yas <= 24) {
-                yasIndirimOrani = 0.10;
-            } else if (yas <= 64) {
-                yasIndirimOrani = 0.00;
-            } else { // > 65
-                yasIndirimOrani = 0.50;
-            }
-        }
-
-        // Gidiş-dönüş yaş indirimine karar ver
-        if (yolculukTipi == 2) {
-            if (yas <= 12) {
-                gidisDonüsYasİndirimi = 0.20;
-            } else if (yas <= 24) {
-                gidisDonüsYasİndirimi = 0.20;
-            } else if (yas <= 64) {
-                gidisDonüsYasİndirimi = 0.00;
-            } else { // > 65
-                gidisDonüsYasİndirimi = 0.30;
-            }
-        } else {
-            gidisDonüsYasİndirimi = 1.0;
-        }
+        yasIndirimOrani = decideYasIndirimOrani(yolculukTipi, yas);
+        gidisDonüsYasİndirimi = decideGidisDonüsYasİndirimi(yolculukTipi, yas);
 
         normalTutar = mesafe * 0.10;
         yasİndirimi = normalTutar * yasIndirimOrani;
@@ -85,5 +53,39 @@ public class Main {
 
         System.out.println("Bilet Fiyatı = " + normalTutar);
         System.out.println("Güncel İndirimliBilet Fiyatınız : " + sonİndirimliTutar);
+    }
+
+    private static double decideGidisDonüsYasİndirimi(int yolculukTipi, int yas) {
+        if (yolculukTipi == 1) {
+            return 1.0;
+        }
+        if (yas <= 12) {
+            return 0.20;
+        }
+        if (yas <= 24) {
+            return 0.20;
+        }
+        if (yas <= 64) {
+            return 0.00;
+        } // > 65
+        return 0.30;
+    }
+
+    private static double decideYasIndirimOrani(int yolculukTipi, int yas) {
+        if (yas <= 12) {
+            return 0.50;
+        }
+        if (yas <= 24) {
+            return 0.10;
+        }
+        if (yas <= 64) {
+            if (yolculukTipi == 2) {
+                return 0.20;
+            } else {
+                return 0.00;
+            }
+        } else {
+            return 0.50;
+        }
     }
 }
