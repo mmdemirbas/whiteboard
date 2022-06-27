@@ -15,15 +15,33 @@ public class Main {
 
         System.out.print("Lütfen Gideceğiniz Mesafeyi Km cinsinden giriniz: ");
         mesafe = scanner.nextInt();
+
+        if (mesafe <= 300) {
+            System.err.println("Hatalı Giriş Yaptınız. Dikkat 300 km Altında Uçak seyatlerimiz bulunmamaktadır.");
+            return;
+        }
+
         System.out.print("Lütfen yaşınızı giriniz: ");
         yas = scanner.nextInt();
+
+        if (yas <= 0) {
+            System.err.println("Hatalı Giriş Yaptınız. Yaş pozitif bir sayı olmak zorundadır.");
+            return;
+        }
+
         System.out.print("Lütfen Yolculuk Tipini (gidiş veya dönüş=1, gidiş-dönüş =2) giriniz : ");
         yolculukTipi = scanner.nextInt();
 
-        if (mesafe <= 300) {
-            System.out.println("Hatalı Giriş Yaptınız. Dikkat 300 km Altında Uçak seyatlerimiz bulunmamaktadır.");
+        if (yolculukTipi != 1 && yolculukTipi != 2) {
+            System.err.println("Hatalı Giriş Yaptınız. Yolculuk tipi 1 veya 2 olmak zorundadır.");
             return;
         }
+
+        //  ..0
+        // 0..12
+        // 13..24
+        // 25..64
+        // 65..
 
         if (yolculukTipi == 2) {
 
