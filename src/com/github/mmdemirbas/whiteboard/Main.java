@@ -20,106 +20,107 @@ public class Main {
         System.out.print("Lütfen Yolculuk Tipini (gidiş veya dönüş=1, gidiş-dönüş =2) giriniz : ");
         yolculukTipi = scanner.nextInt();
 
-        if (mesafe > 300) {
-            if (yolculukTipi == 2) {
+        if (mesafe <= 300) {
+            System.out.println("Hatalı Giriş Yaptınız. Dikkat 300 km Altında Uçak seyatlerimiz bulunmamaktadır.");
+            return;
+        }
 
-                if (yas > 0 && yas < 13) {
+        if (yolculukTipi == 2) {
 
-                    normalTutar = mesafe * 0.10;
-                    yasİndirimi = normalTutar * 0.50;
-                    indirimliTutar = normalTutar - yasİndirimi;
-                    gidisDonüsİndirimi = indirimliTutar * 0.20;
-                    sonİndirimliTutar = indirimliTutar - gidisDonüsİndirimi;
+            if (yas > 0 && yas < 13) {
 
-
-                    System.out.println("Bilet Fiyatı = " + normalTutar);
-                    System.out.println("Güncel İndirimliBilet Fiyatınız : " + sonİndirimliTutar);
-
-
-                } else if (yas > 12 && yas < 25) {
-                    normalTutar = mesafe * 0.10;
-                    yasİndirimi = normalTutar * 0.10;
-                    indirimliTutar = normalTutar - yasİndirimi;
-                    gidisDonüsİndirimi = indirimliTutar * 0.20;
-                    sonİndirimliTutar = indirimliTutar - gidisDonüsİndirimi;
+                normalTutar = mesafe * 0.10;
+                yasİndirimi = normalTutar * 0.50;
+                indirimliTutar = normalTutar - yasİndirimi;
+                gidisDonüsİndirimi = indirimliTutar * 0.20;
+                sonİndirimliTutar = indirimliTutar - gidisDonüsİndirimi;
 
 
-                    System.out.println("Bilet Fiyatı = " + normalTutar);
-                    System.out.println("Güncel İndirimliBilet Fiyatınız : " + sonİndirimliTutar);
-
-                } else if (yas > 65) {
-                    normalTutar = mesafe * 0.10;
-                    yasİndirimi = normalTutar * 0.50;
-                    indirimliTutar = normalTutar - yasİndirimi;
-                    gidisDonüsİndirimi = indirimliTutar * 0.30;
-                    sonİndirimliTutar = indirimliTutar - gidisDonüsİndirimi;
+                System.out.println("Bilet Fiyatı = " + normalTutar);
+                System.out.println("Güncel İndirimliBilet Fiyatınız : " + sonİndirimliTutar);
 
 
-                    System.out.println("Bilet Fiyatı = " + normalTutar);
-                    System.out.println("Güncel İndirimliBilet Fiyatınız : " + sonİndirimliTutar);
-
-                } else if (yas > 24 && yas < 65) {
-
-                    normalTutar = mesafe * 0.10;
-                    yasİndirimi = normalTutar * 0.20;
-                    indirimliTutar = normalTutar - yasİndirimi;
-
-                    System.out.println("Bilet Fiyatı = " + normalTutar);
-                    System.out.println("Yaş İndirimli Tutar  = " + indirimliTutar);
+            } else if (yas > 12 && yas < 25) {
+                normalTutar = mesafe * 0.10;
+                yasİndirimi = normalTutar * 0.10;
+                indirimliTutar = normalTutar - yasİndirimi;
+                gidisDonüsİndirimi = indirimliTutar * 0.20;
+                sonİndirimliTutar = indirimliTutar - gidisDonüsİndirimi;
 
 
-                } else {
-                    System.out.println("Hatalı Giriş Yaptınız. Lütfen Yaşınızı Tekrar giriniz");
-                }
-            } else if (yolculukTipi == 1) {
-                if (yas > 0 && yas < 13) {
+                System.out.println("Bilet Fiyatı = " + normalTutar);
+                System.out.println("Güncel İndirimliBilet Fiyatınız : " + sonİndirimliTutar);
 
-                    normalTutar = mesafe * 0.10;
-                    yasİndirimi = normalTutar * 0.50;
-                    indirimliTutar = normalTutar - yasİndirimi;
-                    gidisDonüsİndirimi = indirimliTutar * 1.0;
-                    sonİndirimliTutar = indirimliTutar - gidisDonüsİndirimi;
+            } else if (yas > 65) {
+                normalTutar = mesafe * 0.10;
+                yasİndirimi = normalTutar * 0.50;
+                indirimliTutar = normalTutar - yasİndirimi;
+                gidisDonüsİndirimi = indirimliTutar * 0.30;
+                sonİndirimliTutar = indirimliTutar - gidisDonüsİndirimi;
 
 
-                    System.out.println("Bilet Fiyatı = " + normalTutar);
-                    System.out.println("Güncel İndirimliBilet Fiyatınız : " + sonİndirimliTutar);
+                System.out.println("Bilet Fiyatı = " + normalTutar);
+                System.out.println("Güncel İndirimliBilet Fiyatınız : " + sonİndirimliTutar);
+
+            } else if (yas > 24 && yas < 65) {
+
+                normalTutar = mesafe * 0.10;
+                yasİndirimi = normalTutar * 0.20;
+                indirimliTutar = normalTutar - yasİndirimi;
+
+                System.out.println("Bilet Fiyatı = " + normalTutar);
+                System.out.println("Yaş İndirimli Tutar  = " + indirimliTutar);
 
 
-                } else if (yas > 12 && yas < 25) {
-                    normalTutar = mesafe * 0.10;
-                    yasİndirimi = normalTutar * 0.10;
-                    indirimliTutar = normalTutar - yasİndirimi;
-                    gidisDonüsİndirimi = indirimliTutar * 1.0;
-                    sonİndirimliTutar = indirimliTutar - gidisDonüsİndirimi;
-
-
-                    System.out.println("Bilet Fiyatı = " + normalTutar);
-                    System.out.println("Güncel İndirimliBilet Fiyatınız : " + sonİndirimliTutar);
-                } else if (yas > 65) {
-                    normalTutar = mesafe * 0.10;
-                    yasİndirimi = normalTutar * 0.50;
-                    indirimliTutar = normalTutar - yasİndirimi;
-                    gidisDonüsİndirimi = indirimliTutar * 1.0;
-                    sonİndirimliTutar = indirimliTutar - gidisDonüsİndirimi;
-
-
-                    System.out.println("Bilet Fiyatı = " + normalTutar);
-                    System.out.println("Güncel İndirimliBilet Fiyatınız : " + sonİndirimliTutar);
-
-                } else if (yas > 24 && yas < 65) {
-
-                    normalTutar = mesafe * 0.10;
-
-
-                    System.out.println("Bilet Fiyatı = " + normalTutar);
-
-
-                }
             } else {
                 System.out.println("Hatalı Giriş Yaptınız. Lütfen Yaşınızı Tekrar giriniz");
             }
+        } else if (yolculukTipi == 1) {
+            if (yas > 0 && yas < 13) {
+
+                normalTutar = mesafe * 0.10;
+                yasİndirimi = normalTutar * 0.50;
+                indirimliTutar = normalTutar - yasİndirimi;
+                gidisDonüsİndirimi = indirimliTutar * 1.0;
+                sonİndirimliTutar = indirimliTutar - gidisDonüsİndirimi;
+
+
+                System.out.println("Bilet Fiyatı = " + normalTutar);
+                System.out.println("Güncel İndirimliBilet Fiyatınız : " + sonİndirimliTutar);
+
+
+            } else if (yas > 12 && yas < 25) {
+                normalTutar = mesafe * 0.10;
+                yasİndirimi = normalTutar * 0.10;
+                indirimliTutar = normalTutar - yasİndirimi;
+                gidisDonüsİndirimi = indirimliTutar * 1.0;
+                sonİndirimliTutar = indirimliTutar - gidisDonüsİndirimi;
+
+
+                System.out.println("Bilet Fiyatı = " + normalTutar);
+                System.out.println("Güncel İndirimliBilet Fiyatınız : " + sonİndirimliTutar);
+            } else if (yas > 65) {
+                normalTutar = mesafe * 0.10;
+                yasİndirimi = normalTutar * 0.50;
+                indirimliTutar = normalTutar - yasİndirimi;
+                gidisDonüsİndirimi = indirimliTutar * 1.0;
+                sonİndirimliTutar = indirimliTutar - gidisDonüsİndirimi;
+
+
+                System.out.println("Bilet Fiyatı = " + normalTutar);
+                System.out.println("Güncel İndirimliBilet Fiyatınız : " + sonİndirimliTutar);
+
+            } else if (yas > 24 && yas < 65) {
+
+                normalTutar = mesafe * 0.10;
+
+
+                System.out.println("Bilet Fiyatı = " + normalTutar);
+
+
+            }
         } else {
-            System.out.println("Hatalı Giriş Yaptınız. Dikkat 300 km Altında Uçak seyatlerimiz bulunmamaktadır.");
+            System.out.println("Hatalı Giriş Yaptınız. Lütfen Yaşınızı Tekrar giriniz");
         }
     }
 }
