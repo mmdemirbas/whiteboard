@@ -16,7 +16,7 @@ public class Main {
         System.out.print("Lütfen Gideceğiniz Mesafeyi Km cinsinden giriniz: ");
         mesafe = scanner.nextInt();
 
-        if (mesafe <= 300) {
+        if (mesafe < 300) {
             System.err.println("Hatalı Giriş Yaptınız. Dikkat 300 km Altında Uçak seyatlerimiz bulunmamaktadır.");
             return;
         }
@@ -37,16 +37,14 @@ public class Main {
             return;
         }
 
-        //  ..0
-        // 0..12
-        // 13..24
-        // 25..64
-        // 65..
+        //  ..0   OK
+        // 0..12  OK
+        // 13..24 OK
+        // 25..64 OK
+        // 65..   OK
 
         if (yolculukTipi == 2) {
-
-            if (yas > 0 && yas < 13) {
-
+            if (yas <= 12) {
                 normalTutar = mesafe * 0.10;
                 yasİndirimi = normalTutar * 0.50;
                 indirimliTutar = normalTutar - yasİndirimi;
@@ -56,9 +54,7 @@ public class Main {
 
                 System.out.println("Bilet Fiyatı = " + normalTutar);
                 System.out.println("Güncel İndirimliBilet Fiyatınız : " + sonİndirimliTutar);
-
-
-            } else if (yas > 12 && yas < 25) {
+            } else if (yas <= 24) {
                 normalTutar = mesafe * 0.10;
                 yasİndirimi = normalTutar * 0.10;
                 indirimliTutar = normalTutar - yasİndirimi;
@@ -68,8 +64,16 @@ public class Main {
 
                 System.out.println("Bilet Fiyatı = " + normalTutar);
                 System.out.println("Güncel İndirimliBilet Fiyatınız : " + sonİndirimliTutar);
+            } else if (yas <= 64) {
 
-            } else if (yas > 65) {
+                normalTutar = mesafe * 0.10;
+                yasİndirimi = normalTutar * 0.20;
+                indirimliTutar = normalTutar - yasİndirimi;
+
+                System.out.println("Bilet Fiyatı = " + normalTutar);
+                System.out.println("Yaş İndirimli Tutar  = " + indirimliTutar);
+
+            } else { // > 65
                 normalTutar = mesafe * 0.10;
                 yasİndirimi = normalTutar * 0.50;
                 indirimliTutar = normalTutar - yasİndirimi;
@@ -79,22 +83,12 @@ public class Main {
 
                 System.out.println("Bilet Fiyatı = " + normalTutar);
                 System.out.println("Güncel İndirimliBilet Fiyatınız : " + sonİndirimliTutar);
-
-            } else if (yas > 24 && yas < 65) {
-
-                normalTutar = mesafe * 0.10;
-                yasİndirimi = normalTutar * 0.20;
-                indirimliTutar = normalTutar - yasİndirimi;
-
-                System.out.println("Bilet Fiyatı = " + normalTutar);
-                System.out.println("Yaş İndirimli Tutar  = " + indirimliTutar);
-
-
-            } else {
-                System.out.println("Hatalı Giriş Yaptınız. Lütfen Yaşınızı Tekrar giriniz");
             }
-        } else if (yolculukTipi == 1) {
-            if (yas > 0 && yas < 13) {
+
+        } else {
+
+
+            if (yas <= 12) {
 
                 normalTutar = mesafe * 0.10;
                 yasİndirimi = normalTutar * 0.50;
@@ -106,8 +100,7 @@ public class Main {
                 System.out.println("Bilet Fiyatı = " + normalTutar);
                 System.out.println("Güncel İndirimliBilet Fiyatınız : " + sonİndirimliTutar);
 
-
-            } else if (yas > 12 && yas < 25) {
+            } else if (yas <= 24) {
                 normalTutar = mesafe * 0.10;
                 yasİndirimi = normalTutar * 0.10;
                 indirimliTutar = normalTutar - yasİndirimi;
@@ -117,7 +110,17 @@ public class Main {
 
                 System.out.println("Bilet Fiyatı = " + normalTutar);
                 System.out.println("Güncel İndirimliBilet Fiyatınız : " + sonİndirimliTutar);
-            } else if (yas > 65) {
+            } else if (yas <= 64) {
+
+
+                normalTutar = mesafe * 0.10;
+
+
+                System.out.println("Bilet Fiyatı = " + normalTutar);
+
+
+            } else { // > 65
+
                 normalTutar = mesafe * 0.10;
                 yasİndirimi = normalTutar * 0.50;
                 indirimliTutar = normalTutar - yasİndirimi;
@@ -128,17 +131,8 @@ public class Main {
                 System.out.println("Bilet Fiyatı = " + normalTutar);
                 System.out.println("Güncel İndirimliBilet Fiyatınız : " + sonİndirimliTutar);
 
-            } else if (yas > 24 && yas < 65) {
-
-                normalTutar = mesafe * 0.10;
-
-
-                System.out.println("Bilet Fiyatı = " + normalTutar);
-
-
             }
-        } else {
-            System.out.println("Hatalı Giriş Yaptınız. Lütfen Yaşınızı Tekrar giriniz");
+
         }
     }
 }
