@@ -1,4 +1,4 @@
-package com.github.mmdemirbas.whiteboard;
+package com.github.mmdemirbas.whiteboard.ifelse;
 
 import java.util.Scanner;
 

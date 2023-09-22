@@ -1,0 +1,17 @@
+
+a
+java:S1192"LDefine a constant instead of duplicating this literal "Aslan BALCI" 3 times.(«—«
+O
+java:S1854
+":Remove this useless assignment to local variable "aslan2".(ù•¥
+U
+java:S1854":Remove this useless assignment to local variable "aslan3".(¾Ð·’ÿÿÿÿÿ
+N
+java:S1854"9Remove this useless assignment to local variable "aslan".(«—«
+?
+java:S1481"*Remove this unused "aslan" local variable.(«—«
+F
+java:S1481"+Remove this unused "aslan3" local variable.(¾Ð·’ÿÿÿÿÿ
+@
+java:S1481
+"+Remove this unused "aslan2" local variable.(ù•¥

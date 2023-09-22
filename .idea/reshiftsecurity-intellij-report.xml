@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ReshiftSecurity-Intellij-Report">
+    <isGitProject>true</isGitProject>
+    <gitBranch>main</gitBranch>
+    <gitRepo>https://github.com/mmdemirbas/whiteboard.git</gitRepo>
+    <projectName>whiteboard</projectName>
+    <securityIssues />
+  </component>
+</project>
